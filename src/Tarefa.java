@@ -8,12 +8,16 @@ public class Tarefa {
     private LocalDateTime dataCriacao;
     private boolean concluida;
 
-    public Tarefa(int id, String titulo, String descricao, String dataCriacao){
+    public Tarefa(int id, String titulo, String descricao){
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataCriacao = LocalDateTime.now();
         this.concluida = false;
+    }
+
+    public Tarefa(){
+
     }
 
     //getters
