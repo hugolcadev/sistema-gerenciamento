@@ -9,7 +9,7 @@ public class GerenciaTarefa {
     String descricaoAux;
 
     //Método para criar tarefa
-    public void criaTarefa(){
+    public void criaTarefas(){
         System.out.println("Criando tarefa.\nInsira os dados:");
         System.out.print("Id: ");
         idAux = sc.nextInt();
@@ -40,14 +40,14 @@ public class GerenciaTarefa {
             }else{
                 op-=1;
                 System.out.println("");
-                exibeTarefa(op);
+                exibeTarefas(op);
             }
         }
         sc.nextLine();
     }
 
     //Método para exibir informações detalhadas de uma tarefa
-    public void exibeTarefa(int op){
+    public void exibeTarefas(int op){
 
         System.out.println("Id: " + tarefas.get(op).getId());
         System.out.println("Titulo: " + tarefas.get(op).getTitulo());
@@ -63,7 +63,7 @@ public class GerenciaTarefa {
         percorreLista();
         int op = sc.nextInt()-1;
         System.out.println("\nEditando tarefa!");
-        exibeTarefa(op);
+        exibeTarefas(op);
         System.out.println("\nInsira os dados: ");
         System.out.print("Id: ");
         tarefas.get(op).setId(sc.nextInt());
@@ -73,6 +73,23 @@ public class GerenciaTarefa {
         System.out.print("Descrição: ");
         tarefas.get(op).setDescricao(sc.nextLine());
         System.out.println("Tarefa editada com sucesso!\n");
+    }
+
+    //Método para remover tarefas
+    public void removeTarefas(){
+        System.out.println("Qual tarefa deseja remover?");
+        percorreLista();
+        System.out.println("Para voltar, digite 0.");
+        int op = sc.nextInt();
+        if (op==0){
+
+        }else if(op<0){
+            System.out.println("Número negativo - inválido!\n");
+        }else{
+            op-=1;
+            tarefas.remove(op);
+        }
+        
     }
 
     //Método auxiliar que contém apenas o loop para listar as tarefas (usado sempre que é listado as tarefas)

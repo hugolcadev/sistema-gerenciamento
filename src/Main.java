@@ -21,7 +21,7 @@ public class Main {
 
             case 1:
                 System.out.println("");
-                gerenciador.criaTarefa();
+                gerenciador.criaTarefas();
                 break;
             case 2:
                 System.out.println("");
@@ -30,6 +30,8 @@ public class Main {
             case 3:
                 gerenciador.editaTarefas();
                 break;
+            case 4:
+                gerenciador.removeTarefas();
         }
         }while(opcao!=5);
         sc.close();
