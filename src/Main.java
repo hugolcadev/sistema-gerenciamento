@@ -14,16 +14,21 @@ public class Main {
         System.out.println("2. Listar tarefas.");
         System.out.println("3. Editar tarefa.");
         System.out.println("4. Remover tarefa.");
-        System.out.println("5. Sair do programa.\n");
+        System.out.println("5. Sair do programa.");
         opcao = sc.nextInt();
         
         switch(opcao){
 
             case 1:
+                System.out.println("");
                 gerenciador.criaTarefa();
                 break;
             case 2:
+                System.out.println("");
                 gerenciador.listaTarefas();
+                break;
+            case 3:
+                gerenciador.editaTarefas();
                 break;
         }
         }while(opcao!=5);
