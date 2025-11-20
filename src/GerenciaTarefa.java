@@ -92,6 +92,15 @@ public class GerenciaTarefa {
         
     }
 
+    //Método para marcar tarefas como concluídas
+    public void concluiTarefa(){
+        System.out.println("\nEscolha a tarefa que deseja marcar como concluída:");
+        percorreLista();
+        int op = sc.nextInt();
+        tarefas.get(op-1).setConcluida(true);
+        System.out.println("Tarefa marcada como concluída.\n");
+    }
+    
     //Método auxiliar que contém apenas o loop para listar as tarefas (usado sempre que é listado as tarefas)
     public void percorreLista(){
             for (int i = 0; i < tarefas.size(); i++){
